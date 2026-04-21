@@ -10,7 +10,42 @@
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div class="header-right">
+        <button id="user-icon-btn" class="user-icon-btn" title="Admin Login">👤</button>
+      </div>
     </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Teacher Login</h3>
+          <button class="close-btn" id="close-login-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="login-form">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" required placeholder="Enter username" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" required placeholder="Enter password" />
+            </div>
+            <button type="submit" class="btn-primary">Login</button>
+          </form>
+          <div id="login-message" class="hidden"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logout Button (hidden by default) -->
+    <div id="logout-container" class="hidden">
+      <div class="logout-panel">
+        <span id="username-display"></span>
+        <button id="logout-btn" class="btn-secondary">Logout</button>
+      </div>
+    </div>
 
     <main>
       <section id="activities-container">
@@ -21,8 +56,8 @@
         </div>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+      <section id="signup-container" class="hidden">
+        <h3>Register Student for an Activity</h3>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
@@ -35,9 +70,13 @@
               <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Register Student</button>
         </form>
         <div id="message" class="hidden"></div>
+      </section>
+
+      <section id="view-only-container">
+        <p class="info-text">Sign in above to manage student registrations.</p>
       </section>
     </main>
 
